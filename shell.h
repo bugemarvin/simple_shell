@@ -22,7 +22,12 @@
 #include <sys/stat.h>
 #include <string.h>
 
+#define _CMDBUFSIZE 1024
+#define _CMD_TOKN_BUFSIZE 64
+#define _CMD_TOKN_DELIMT " \t\r\n\a"
+
 int _putchar(char c);
-int main(int ac, char **av);
+void _prompt(char *cmd);
+char *_getline(void);
 
 #endif
