@@ -26,7 +26,12 @@ char *_getline(void)
 	while (1)
 	{
 		a = getchar();
-		if (a == EOF || a == '\n')
+		if (a == EOF)
+		{
+			printf("\n");
+			exit(EXIT_SUCCESS);
+		}
+		else if(a == '\n')
 		{
 			buffer[cmd_positions] = '\0';
 			return (buffer);

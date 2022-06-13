@@ -81,8 +81,8 @@ int cmd_help(char **av)
  */
 int cmd_exit(char **av)
 {
-	if (av == NULL)
-		return (1);
+	if (!av)
+		return (0);
 	return (0);
 }
 

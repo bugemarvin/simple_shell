@@ -12,7 +12,7 @@ void cmd_getloop(void)
 	int cmd_status;
 
 	do {
-		printf("$ ");
+		printf("Alx-Simple_Shell$: ");
 		cmd_line = _getline();
 		av = _strtok(cmd_line);
 		cmd_status = cmd_getexecute(av);
