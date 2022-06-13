@@ -13,10 +13,7 @@ char *_getline(void)
 {
 	char *buffer;
 	int a, cmd_positions = 0, buff_size = CMD_BUFFS_SIZE;
-	/*
-	 * checks if line_chs or size_ln pointers are NULL,
-	 *	or the file_b is a valid pointer for a file.
-	*/
+
 	buffer = malloc(sizeof(*buffer));
 	if (!buffer)
 	{
@@ -31,7 +28,7 @@ char *_getline(void)
 			printf("\n");
 			exit(EXIT_SUCCESS);
 		}
-		else if(a == '\n')
+		else if (a == '\n')
 		{
 			buffer[cmd_positions] = '\0';
 			return (buffer);
