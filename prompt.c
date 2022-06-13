@@ -13,7 +13,7 @@ int _prompt(char **av)
 {
 	pid_t cmdpid;
 	pid_t cmdwpid = 1;
-	int cmdstatus;
+	int cmds_status;
 
 	cmdpid = fork();
 	if (cmdpid == 0)
@@ -34,8 +34,8 @@ int _prompt(char **av)
 		{
 			do
 			{
-				cmdwpid = waitpid(cmdpid, &cmdstatus, WUNTRACED);
-			} while (!WIFEXITED(cmdstatus) && !WIFSIGNALED(cmdstatus));
+				cmdwpid = waitpid(cmdpid, &cmds_status, WUNTRACED);
+			} while (!WIFEXITED(cmds_status) && !WIFSIGNALED(cmds_status));
 		}
 	}
 	return 1;

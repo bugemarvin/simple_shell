@@ -8,17 +8,17 @@
 
 void cmd_getloop(void)
 {
-	char **av, *cmdline;
-	int cmdstatus;
+	char **av, *cmd_line;
+	int cmd_status;
 
 	do
 	{
 		printf("$ ");
-		cmdline = _getline();
-		av = _strtok(cmdline);
-		cmdstatus = cmd_getexecute(av);
+		cmd_line = _getline();
+		av = _strtok(cmd_line);
+		cmd_status = cmd_getexecute(av);
 
-		free(cmdline);
+		free(cmd_line);
 		free(av);
-	} while (cmdstatus);
+	} while (cmd_status);
 }

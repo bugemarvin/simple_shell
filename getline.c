@@ -1,5 +1,5 @@
 #include "shell.h"
-#define CMD_BUFF_SIZE 1024
+#define CMD_BUFFS_SIZE 1024
 
 /**
  * _getline - funtion that reads an cmd line.
@@ -12,7 +12,7 @@
 char *_getline(void)
 {
 	char *buffer;
-	int a, cmdposition = 0, buff_size = CMD_BUFF_SIZE;
+	int a, cmd_positions = 0, buff_size = CMD_BUFFS_SIZE;
 	/*
 	 * checks if line_chs or size_ln pointers are NULL,
 	 *	or the file_b is a valid pointer for a file.
@@ -28,17 +28,17 @@ char *_getline(void)
 		a = getchar();
 		if (a == EOF || a == '\n')
 		{
-			buffer[cmdposition] = '\0';
+			buffer[cmd_positions] = '\0';
 			return (buffer);
 		}
 		else
 		{
-			buffer[cmdposition] = a;
+			buffer[cmd_positions] = a;
 		}
-		cmdposition++;
-		if (cmdposition >= buff_size)
+		cmd_positions++;
+		if (cmd_positions >= buff_size)
 		{
-			buff_size = buff_size + CMD_BUFF_SIZE;
+			buff_size = buff_size + CMD_BUFFS_SIZE;
 			buffer = realloc(buffer, buff_size);
 			if (!buffer)
 			{

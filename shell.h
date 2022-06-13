@@ -1,5 +1,5 @@
-#ifndef SHELL_H
-#define SHELL_H
+#ifndef SHELL_H_INCLUDED
+#define SHELL_H_INCLUDED
 
 /*
  * Authors: Marvin Kurland.
@@ -22,30 +22,15 @@
 #include <sys/stat.h>
 #include <string.h>
 
-int cmd_cd(char **av);
-int cmd_help(char **av);
-int cmd_exit(char **av);
-
-char *cmd_str_builtin[] = 
-{
-	"cd",
-	"help",
-	"exit"
-};
-
-int (*cmd_func_builtin[]) (char **) = 
-{
-	&cmd_cd,
-	&cmd_help,
-	&cmd_exit
-};
-
-int cmd_builtins();
-int cmd_getexecute(char **av);
 int _putchar(char c);
 int _prompt(char **av);
 char *_getline(void);
 void cmd_getloop(void);
 char **_strtok(char *line);
+int cmd_cd(char **av);
+int cmd_help(char **av);
+int cmd_exit(char **av);
+int cmd_builtins();
+int cmd_getexecute(char **av);
 
 #endif
