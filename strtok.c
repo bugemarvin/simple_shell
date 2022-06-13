@@ -7,7 +7,7 @@
  * @line: chars for spliting.
  *
  * Return: Always 1 for success.
- *		-1 for NULL/failure.
+ *		-1 for failure.
  */
 
 char **_strtok(char *line)

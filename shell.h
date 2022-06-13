@@ -30,7 +30,7 @@ char **_strtok(char *line);
 int cmd_cd(char **av);
 int cmd_help(char **av);
 int cmd_exit(char **av);
-int cmd_builtins();
+int cmd_builtins(void);
 int cmd_getexecute(char **av);
 
 #endif

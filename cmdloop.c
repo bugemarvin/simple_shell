@@ -11,8 +11,7 @@ void cmd_getloop(void)
 	char **av, *cmd_line;
 	int cmd_status;
 
-	do
-	{
+	do {
 		printf("$ ");
 		cmd_line = _getline();
 		av = _strtok(cmd_line);

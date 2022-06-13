@@ -1,9 +1,8 @@
 #include "shell.h"
 
 /**
- * prompt - function for the comandline interpreter `C` std in/out.
+ * _prompt - function for the comandline interpreter `C` std in/out.
  * @av: argument values/vector.
- * @ac: argument counts.
  *
  * Return: Always 1 on succes.
  *		-1 for NUL or failure.
@@ -24,7 +23,7 @@ int _prompt(char **av)
 		}
 		exit(EXIT_FAILURE);
 	}
-	else if(cmdpid < 0)
+	else if (cmdpid < 0)
 	{
 		perror("$ Error");
 	}
@@ -32,11 +31,10 @@ int _prompt(char **av)
 	{
 		if (cmdwpid != 0)
 		{
-			do
-			{
+			do {
 				cmdwpid = waitpid(cmdpid, &cmds_status, WUNTRACED);
 			} while (!WIFEXITED(cmds_status) && !WIFSIGNALED(cmds_status));
 		}
 	}
-	return 1;
+	return (1);
 }
