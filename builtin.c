@@ -6,7 +6,7 @@
  * Return: Always 1 for success.
  */
 
-int cmd_builtins(void)
+int cmd_builtins()
 {
 	return (sizeof(cmd_str_builtin) / sizeof(char *));
 }

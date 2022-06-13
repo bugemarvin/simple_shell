@@ -7,7 +7,7 @@
  * Return: Always 1 for succes.
  */
 
-int cmd_cd(**av)
+int cmd_cd(char **av)
 {
 	if (av[1] == NULL)
 	{

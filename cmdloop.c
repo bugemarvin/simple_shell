@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * _cmdloop - function for looping terminal.
+ * cmd_getloop - function for looping terminal.
  *
  * Return: always 1 if EOF is not reached.
  */
 
-void _cmdloop(void)
+void cmd_getloop(void)
 {
-	char **av, cmdline;
+	char **av, *cmdline;
 	int cmdstatus;
 
 	do
@@ -16,7 +16,7 @@ void _cmdloop(void)
 		printf("$ ");
 		cmdline = _getline();
 		av = _strtok(cmdline);
-		cmdstatus = _cmdexecute(av);
+		cmdstatus = cmd_getexecute(av);
 
 		free(cmdline);
 		free(av);

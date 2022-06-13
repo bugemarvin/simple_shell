@@ -1,6 +1,6 @@
 #include "shell.h"
 
-int _cmdexecute(char **av)
+int cmd_getexecute(char **av)
 {
 	int c;
 

@@ -15,7 +15,7 @@ int main(int ac, char **av)
 	if (ac != 2)
 	{
 		if (av != 0)
-			_cmdloop();
+			cmd_getloop();
 	}
 
 	return (EXIT_SUCCESS);

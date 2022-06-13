@@ -22,11 +22,6 @@
 #include <sys/stat.h>
 #include <string.h>
 
-int _putchar(char c);
-int _prompt(char **av);
-char *_getline(void);
-void _cmdloop(void);
-char **_strtok(char *line);
 int cmd_cd(char **av);
 int cmd_help(char **av);
 int cmd_exit(char **av);
@@ -45,6 +40,12 @@ int (*cmd_func_builtin[]) (char **) =
 	&cmd_exit
 };
 
-int cmd_builtins(void);
+int cmd_builtins();
+int cmd_getexecute(char **av);
+int _putchar(char c);
+int _prompt(char **av);
+char *_getline(void);
+void cmd_getloop(void);
+char **_strtok(char *line);
 
 #endif
