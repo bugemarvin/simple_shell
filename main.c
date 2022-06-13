@@ -14,7 +14,8 @@ int main(int ac, char **av)
 {
 	if (ac != 2)
 	{
-		cmd_loop();
+		if (av != 0)
+			_cmdloop();
 	}
 
 	return (EXIT_SUCCESS);

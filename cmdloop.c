@@ -14,8 +14,8 @@ void _cmdloop(void)
 	do
 	{
 		printf("$ ");
-		cmdline = _getreadline();
-		av = _strtokline(cmdline);
+		cmdline = _getline();
+		av = _strtok(cmdline);
 		cmdstatus = _cmdexecute(av);
 
 		free(cmdline);

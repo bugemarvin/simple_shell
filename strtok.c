@@ -1,4 +1,6 @@
 #include "shell.h"
+#define CMD_TOKN_BUFF_SIZE 64
+#define CMD_TOKN_DELIMT " \t\r\n\a"
 
 /**
  * _strtok - function to split line.
@@ -11,25 +13,25 @@
 char **_strtok(char *line)
 {
 	char *token, **tokens;
-	int buff_size = CMDBUFSIZE, cmdposition = 0;
+	int buff_size = CMD_TOKN_BUFF_SIZE, cmdposition = 0;
 
 	tokens = malloc(sizeof(*tokens) * buff_size);
 
-	if (!token)
+	if (!tokens)
 	{
 		fprintf(stderr, "$ Error failed memory allocation");
 		exit(EXIT_FAILURE);
 	}
 
-	token = strtok(line, _CMD_TOKN_DELIMT);	
-	while (token != 0)
+	token = strtok(line, CMD_TOKN_DELIMT);
+	while (token != NULL)
 	{
 		tokens[cmdposition] = token;
 		cmdposition++;
 
 		if (cmdposition >= buff_size)
 		{
-			buff_size = buff_size + CMD_TOKN_BUFSIZE;
+			buff_size = buff_size + CMD_TOKN_BUFF_SIZE;
 			tokens = realloc(tokens, sizeof(*tokens) * buff_size);
 			if (!tokens)
 			{
@@ -37,7 +39,7 @@ char **_strtok(char *line)
 				exit(EXIT_FAILURE);
 			}
 		}
-		token = strtok(NULL, _CMD_TOKN_DELIMT);
+		token = strtok(NULL, CMD_TOKN_DELIMT);
 	}
 	tokens[cmdposition] = NULL;
 	return (tokens);
