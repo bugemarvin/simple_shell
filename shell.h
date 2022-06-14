@@ -27,9 +27,6 @@ int _prompt(char **av);
 char *_getline(void);
 void cmd_getloop(void);
 char **_strtok(char *line);
-int cmd_cd(char **av);
-int cmd_help(char **av);
-int cmd_exit(char **av);
 int cmd_builtins(void);
 int cmd_getexecute(char **av);
 
