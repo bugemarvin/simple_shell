@@ -23,7 +23,7 @@ char *cmd_readline(void)
 	}
 	while (1)
 	{
-		a = cmd_getline(&buffer, &buff_size, stdin);
+		a = getchar();
 		if (a == EOF)
 		{
 			printf("\n");

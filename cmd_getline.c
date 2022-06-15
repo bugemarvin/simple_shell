@@ -20,7 +20,7 @@ ssize_t cmd_getline(char **tx, size_t *len, FILE * fn)
 		}
 	*tx[0] = '\0';
 	buffer = malloc(sizeof(*buffer));
-	while (fgets(buffer, sizeof(buffer), fn) != NULL)
+	while (getchar())
 	{
 		cmd_strcat(*tx, buffer);
 		return (cmd_strlen(*tx));

@@ -48,7 +48,7 @@ int cmd_cd(char **av)
 {
 	if (av[1] == NULL)
 	{
-		fprintf(stderr, "simple_shell$ Argument requiered to change directory\n");
+		fprintf(stderr, "Arguments requiered to change directory\n");
 	}
 	else
 	{
