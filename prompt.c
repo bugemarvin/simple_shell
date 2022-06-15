@@ -29,7 +29,7 @@ int _prompt(char **av)
 	}
 	else
 	{
-		if (cmdwpid != 0)
+		if (cmdwpid > 0)
 		{
 			do {
 				cmdwpid = waitpid(cmdpid, &cmds_status, WUNTRACED);

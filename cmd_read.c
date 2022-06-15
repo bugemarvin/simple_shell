@@ -9,10 +9,11 @@
  *		upon succes  return 1, _getline & line_chars read.
  */
 
-char *_getline(void)
+char *cmd_readline(void)
 {
 	char *buffer;
-	int a, cmd_positions = 0, buff_size = CMD_BUFFS_SIZE;
+	int a;
+	size_t buff_size = CMD_BUFFS_SIZE, cmd_positions = 0;
 
 	buffer = malloc(sizeof(*buffer));
 	if (!buffer)
@@ -22,7 +23,7 @@ char *_getline(void)
 	}
 	while (1)
 	{
-		a = getchar();
+		a = cmd_getline(&buffer, &buff_size, stdin);
 		if (a == EOF)
 		{
 			printf("\n");

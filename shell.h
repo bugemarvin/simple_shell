@@ -24,10 +24,14 @@
 
 int _putchar(char c);
 int _prompt(char **av);
-char *_getline(void);
+char *cmd_readline(void);
 void cmd_getloop(void);
 char **_strtok(char *line);
 int cmd_builtins(void);
 int cmd_getexecute(char **av);
+int cmd_strcmp(char *s1, char *s2);
+ssize_t cmd_getline(char **tx, size_t *len, FILE * fn);
+char *cmd_strcat(char *dest, char *src);
+int cmd_strlen(char *str);
 
 #endif
