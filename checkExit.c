@@ -18,13 +18,3 @@ int checkExit(char *str)
 	free(cpy);
 	return (0);
 }
-/**
- * cmd_exit - Built-In for ctrl + c;
- *
- * Return: Always 98 to end program.
- */
-int cmd_exit(void)
-{
-	printf("Bey!\n");
-	exit(98);
-}
