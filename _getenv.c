@@ -25,6 +25,7 @@ char *_getenv(const char *name)
 			{
 				free(cpy);
 				return (NULL);
+				exit(98);
 			}
 			_strcpy(value, token);
 			free(cpy);

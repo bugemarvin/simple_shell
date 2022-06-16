@@ -77,5 +77,6 @@ int cmd_putchar(char c);
 char *cmd_strcat(char *dest, char *src);
 int cmd_strlen(char *str);
 char *cmd_strtok(char *s1, const char *s2);
+int cmd_exit();
 
 #endif
