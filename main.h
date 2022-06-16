@@ -72,4 +72,10 @@ void free_array_dup(char **array, char *dup);
 void free_and_exit(char *str);
 int _checkBuiltIn(char *str);
 char **tokenize(char *str, int builtIn);
+ssize_t cmd_getline(char **t, size_t *l, FILE *fn);
+int cmd_putchar(char c);
+char *cmd_strcat(char *dest, char *src);
+int cmd_strlen(char *str);
+char *cmd_strtok(char *s1, const char *s2);
+
 #endif
