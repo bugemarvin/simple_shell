@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _checkBuiltIn - Checks if there's a Built-In in the buffer or not
+ * _checkBuiltIn -Function that Checks if there's a Built-In in the buffer or not
  * @str: String to traverse
  *
  * Return: If there's a coincidence or not
